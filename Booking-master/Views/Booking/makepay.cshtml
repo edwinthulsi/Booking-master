@@ -1,0 +1,16 @@
+﻿@model Booking_master.Models.Booking
+
+@{
+    ViewBag.Title = "makepay";
+}
+
+<h2>makepay</h2>
+<h2>Are you sure you are ready to make payment?</h2>
+<h3>Email: &nbsp;&nbsp; @Session["Email"]</h3>
+<h3>Total Cost: &nbsp;&nbsp; @Session["Total"]</h3>
+<div>
+    <p class="button">
+        <a class="btn btn-default" href="~/payment.aspx?total=@Session["Total"].ToString()"> Make Payment </a>
+    </p>
+</div>
+

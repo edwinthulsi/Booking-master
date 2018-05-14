@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Invoice";
+}
+
+<h2>Invoice</h2>
+
+@using (Html.BeginForm("ConvertThisPageToPdf", "Event", FormMethod.Post, new { id = "convertForm" }))
+{
+    <div id="convertThisPageButtonDiv">
+        <input type="submit" value="Convert This Page To PDF" />
+    </div>
+}
+<br />
+<SCRIPT LANGUAGE="JavaScript">
+
+if (window.print) {
+document.write('<form><input type=button name=print value="Print" onClick="window.print()"></form>');
+}
+</SCRIPT>
+
+
+
+@{Html.RenderAction("Client");}
+@{Html.RenderAction("Booking"); }
+
+
+<div>
+    @Html.ActionLink("Back", "ClientLoggedIn", "Registration")
+</div>
+
